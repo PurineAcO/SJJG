@@ -25,7 +25,7 @@ int main(){
         }
     }
 
-    if(cnt1==(dim*(dim+1)/2) || cnt2==dim*(dim*(dim+1)/2) || cnt3==(dim*(dim+1)/2) ){printf("Yes");}
+    if(cnt1==dim*dim || cnt2==dim*dim || cnt3==dim*dim ){printf("Yes");}
     else {printf("No");}
 
     return 0;
