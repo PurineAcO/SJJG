@@ -16,6 +16,7 @@ int main(){
 }
 
 
+
 // struct {int prime;int cnt;} primes[10000]={};
 
 // int judgeprime(int n){
