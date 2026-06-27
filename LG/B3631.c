@@ -51,6 +51,28 @@ void del_one(node nowplace) {
   free(temp);
 }
 
+node del_two(node head, int target) {
+  // 处理头结点
+  if (head->data == target) {
+    node temp = head->next;
+    free(head);
+    return temp;
+  }
+
+  // 查找目标及其前驱
+  node prev = head;
+  node cur = head->next;
+  while (cur != NULL && cur->data != target) {
+    prev = cur;
+    cur = cur->next;
+  }
+
+  // 删除 cur
+  prev->next = cur->next;
+  free(cur);
+  return head;
+}
+
 void printlist(node head) {
   // 打印链表内容 一般用于测试
   for (node p = head; p != NULL; p = p->next) {
@@ -81,10 +103,10 @@ int main() {
 
     if (token == 3) {
       scanf("%d", &first);
-      del_one(find(head, first));
+      head = del_two(head, first);
     }
   }
-  // printlist(head);
+  printlist(head);
 
   return 0;
 }
